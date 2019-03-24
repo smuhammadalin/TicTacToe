@@ -6,6 +6,7 @@ import java.awt.*;
 class View extends JFrame{
     JButton[] buttons;
     JLabel turn;
+    JTextField name;
 
     public View(){
         this.turn = new JLabel("X");
@@ -26,6 +27,11 @@ class View extends JFrame{
             this.add(buttons[i]);
             this.buttons[i].setFont(new Font("Arial", Font.PLAIN, 100));
         }
+        JPanel namePanel = new JPanel();
+        namePanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
+        namePanel.add(name);
+        this.add(namePanel,BorderLayout.SOUTH);
+        this.name.setVisible(true);
     }
 
     public void changePlayer() {
